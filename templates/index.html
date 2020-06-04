@@ -1,0 +1,15 @@
+{%extends "layout.html"%} {% block heading%}
+<h1>welcome</h1> {%endblock%} {%block body%}
+<ol>
+    {%for note in notes%}
+    <li>
+        <h1 style="color: red;">{{note}}</h1>
+    </li>
+    {%endfor%}
+</ol>
+<form action="{{url_for('index')}}" method="POST">
+    <input style="color: green;" type="text" name="note" placeholder="add note">
+    <button>ADD note</button>
+</form>
+
+{%endblock%}
